@@ -1,2 +1,4 @@
 # jobly-backend
-Backend ExpressJS Node for Jobly app
+
+
+This is the ExpressJS Node backend for the Jobly app
