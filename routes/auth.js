@@ -10,7 +10,7 @@ router.post("/login", async function(req, res, next) {
   try {
     const user = await User.authenticate(req.body);
     const token = createToken(user);
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Origin', '*');
     return res.json({ token });
   } catch (e) {
     console.log('---Error auth routes /login',e)
