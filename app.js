@@ -12,16 +12,16 @@ app.options('*', cors());
 const morgan = require("morgan");
 app.use(morgan("tiny"));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  if(req.method === 'OPTION') {
-    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, PATCH, DELETE');
-    return res.status(200).json({});
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Headers', 
+//     'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+//   if(req.method === 'OPTION') {
+//     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, PATCH, DELETE');
+//     return res.status(200).json({});
+//   }
+//   next();
+// });
 
 const usersRoutes = require("./routes/users");
 const companiesRoutes = require("./routes/companies");
