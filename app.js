@@ -12,6 +12,12 @@ app.use(cors());
 const morgan = require("morgan");
 app.use(morgan("tiny"));
 
+app.use((req, res, next) => {
+  res.append('Access-Control-Allow-Origin', ['*']);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 const usersRoutes = require("./routes/users");
 const companiesRoutes = require("./routes/companies");
